@@ -1,0 +1,69 @@
+﻿<Window x:Class="RpgCharacterGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RpgCharacterGenerator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="RosyBrown" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!--Egenskaper-->
+        <Label Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" FontWeight="Bold" Content="RPG Character Generator"/>
+
+        <Label Grid.Column="1" Grid.Row="3" Content="Select Role" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"/>
+        <Label Grid.Column="1" Grid.Row="4" Content="Name" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"/>
+        <Label Grid.Column="1" Grid.Row="5" Content="Strength" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"/>
+        <Label Grid.Column="1" Grid.Row="6" Content="Intelligence" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"/>
+        <Label Name="lblStats" Grid.Column="1" Grid.Row="7" Content="Ability" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Visibility="Hidden"/>
+        <ComboBox Name="cbSelectRole" Grid.Column="2" Grid.Row="3" Margin="5 10" SelectionChanged="cbSelectRole_SelectionChanged" /> 
+        <TextBox Name="txtName" Grid.Column="2" Grid.Row="4" Margin="5 12" VerticalContentAlignment="Center"/>
+        <TextBox Name="txtStr" Grid.Column="2" Grid.Row="5" Margin="5 12" VerticalContentAlignment="Center" IsReadOnly="True" Background="LightGray"/>
+        <TextBox Name="txtInt" Grid.Column="2" Grid.Row="6" Margin="5 12" VerticalContentAlignment="Center" IsReadOnly="True" Background="LightGray"/>
+        <TextBox Name="txtStats" Grid.Column="2" Grid.Row="7" Margin="5 12" VerticalContentAlignment="Center" Visibility="Hidden"/>
+        <Button Name="btnRoleStats" Grid.Column="2" Grid.Row="8" Height="25" Width="70" Content="Role Stats" HorizontalAlignment="Left" Click="btnRoleStats_Click" />
+        <Button Name="btnSaveCharacter" Grid.Column="4" Grid.Row="8" Height="25" Width="90" Content="Save Character" HorizontalAlignment="Right" Click="btnSaveCharacter_Click" />
+        
+        
+        
+        
+        
+        <ListView  Name="lstCharacter" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="5">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Role" DisplayMemberBinding="{Binding Role}"/>
+                    <GridViewColumn Header="Strength" DisplayMemberBinding="{Binding Strength}"/>
+                    <GridViewColumn Header="Intelligence" DisplayMemberBinding="{Binding Intelligence}"/>
+                    <GridViewColumn Header="Ability" DisplayMemberBinding="{Binding Ability}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+   
+    
+    
+    
+    
+    </Grid>
+</Window>
